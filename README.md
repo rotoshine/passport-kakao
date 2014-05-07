@@ -17,7 +17,7 @@ npm install passport-kakao
 var passport = require('passport'),
     KakaoStrategy = require('passport-kakao').Strategy;
 
-passport.use(new KakaoStrategy({    
+passport.use(new KakaoStrategy({
     clientID : clientID,
     callbackURL : callbackURL
   },
@@ -145,7 +145,7 @@ app.get('/oauth', passport.authenticate('kakao', {
 
             <!-- kakao login -->
             <a href="/auth/kakao">
-                카카오 로그인
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
             </a>
         </div>
     </div>
