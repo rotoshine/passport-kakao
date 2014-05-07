@@ -1,6 +1,6 @@
 {
   "name": "passport-kakao",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "kakaotalk login module",
   "main": "./lib/passport-kakao",
   "keywords": [
@@ -9,6 +9,10 @@
     "kakaotalk",
     "oauth2"
   ],
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/rotoshine/passport-kakao.git"
+  },
   "author": "rotoshine@gmail.com",
   "license": "MIT",
   "dependencies": {
