@@ -6,7 +6,8 @@
   "keywords": [
     "passport",
     "kakao",
-    "kakaotalk"
+    "kakaotalk",
+    "oauth2"
   ],
   "author": "rotoshine@gmail.com",
   "license": "MIT",
