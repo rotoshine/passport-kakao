@@ -17,9 +17,9 @@ npm install passport-kakao
 var passport = require('passport'),
     KakaoStrategy = require('passport-kakao').Strategy;
 
-passport.use(new KakaoStrategy({
-    clientID : clientID, // kakao 개발자 사이트에서 애플리케이션 등록 후 앱 키 중 REST API 키
-    callbackURL : callbackURL // 현재 kakao 설정상 3에서 설정된 site_domain/oauth 로만 무조건 호출되므로, 이 설정을 권장함
+passport.use(new KakaoStrategy({    
+    clientID : clientID,
+    callbackURL : callbackURL
   },
   function(accessToken, refreshToken, profile, done){
     // 사용자의 정보는 profile에 들어있다.
@@ -30,6 +30,8 @@ passport.use(new KakaoStrategy({
   }
 ));
 ```
+> 현재 kakao에서 별도의 callbackURL 설정은 없고 사이트 도메인 등록만 있는데, 등록된 사이트 도메인/oauth 로만 호출을 허용하므로 callbackURL은 사이트 도메인/oauth 로 설정하는 것을 권장함. (ex : http://localhost:3000/oauth )
+
 
 ## profile property
 profile에는 아래의 property들이 설정되어 넘겨진다.
@@ -100,8 +102,7 @@ passport.use(new KakaoStrategy({
                     username: profile.id,
                     roles : ['authenticated'],
                     provider: 'kakao',
-                    kakao: profile._json,
-                    profilePhotoUrl : profile._json.properties.thumbnail_image
+                    kakao: profile._json
                 });
 
                 user.save(function(err){
