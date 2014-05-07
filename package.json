@@ -1,0 +1,17 @@
+{
+  "name": "passport-kakao",
+  "version": "0.0.1",
+  "description": "kakaotalk login module",
+  "main": "./lib/passport-kakao",
+  "keywords": [
+    "passport",
+    "kakao",
+    "kakaotalk"
+  ],
+  "author": "rotoshine@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "pkginfo": "~0.3.0",
+    "passport-oauth2": "~1.1.2"
+  }
+}
