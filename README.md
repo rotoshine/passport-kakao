@@ -40,7 +40,7 @@ profile에는 아래의 property들이 설정되어 넘겨진다.
 | ----- |-------| ---- |
 | provider | String | kakao 고정 |
 | id | Number | 사용자의 kakao id |
-| _row | String | 사용자 정보 조회로 얻어진 json string |
+| _raw | String | 사용자 정보 조회로 얻어진 json string |
 | _json | Object | 사용자 정보 조회로 얻어진 json 원본 데이터 |
 
 ## mean.io 와 쉽게 연동하기
