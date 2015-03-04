@@ -9,14 +9,18 @@
     "kakaotalk",
     "oauth2"
   ],
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/rotoshine/passport-kakao.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rotoshine/passport-kakao.git"
   },
   "author": "rotoshine@gmail.com",
   "license": "MIT",
   "dependencies": {
     "pkginfo": "~0.3.0",
     "passport-oauth2": "~1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine-node --verbose test/passport-kakao.spec.js"
   }
 }
