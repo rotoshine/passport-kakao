@@ -1,0 +1,11 @@
+{
+  "name": "passport-kakao-sample",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rotoshine/passport-kakao.git"
+  },
+  "dependencies": {
+    "passport": ">= 0.0.0",
+    "express": ">= 4.4.5"
+  }
+}
