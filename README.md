@@ -30,9 +30,9 @@ passport.use(new KakaoStrategy({
   }
 ));
 ```
-> 현재 kakao에서 별도의 callbackURL 설정은 없고 사이트 도메인 등록만 있는데, 등록된 사이트 도메인/oauth 로만 호출을 허용하므로 callbackURL은 사이트 도메인/oauth 로 설정하는 것을 권장함. (ex : http://localhost:3000/oauth )
+> 기본 callbackPath는 `/oauth` 이고 https://developers.kakao.com 에서 수정할 수 있다. 하지만 callbackURL은 `사이트 도메인/oauth` 로 설정하는 것을 권장함. (ex : http://myhomepage.com:3000/oauth )
 
-
+##
 ## profile property
 profile에는 아래의 property들이 설정되어 넘겨진다.
 
@@ -42,6 +42,19 @@ profile에는 아래의 property들이 설정되어 넘겨진다.
 | id | Number | 사용자의 kakao id |
 | _raw | String | 사용자 정보 조회로 얻어진 json string |
 | _json | Object | 사용자 정보 조회로 얻어진 json 원본 데이터 |
+
+
+## simple sample
+### 설치 & 실행
+1. `./sample/sample.js` 의 `appKey` 를 https://developers.kakao.com 에서 발급받은 JS appKey 값으로 셋팅.
+2. command line 에서 아래의 커맨드 실행
+3. 브라우져를 열고 `127.0.0.1:3000/login` 을 입력 후 이후 과정을 진행한다.
+```
+cd ./sample
+npm install
+node app
+```
+
 
 ## mean.io 와 쉽게 연동하기
 
