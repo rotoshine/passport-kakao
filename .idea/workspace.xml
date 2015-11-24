@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ecacdba-538e-47f0-af17-f7ef2536637a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="9ecacdba-538e-47f0-af17-f7ef2536637a" name="Default" comment="README 수정">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="passport-kakao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +70,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66472304">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.34985423">
+              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -589,7 +588,7 @@
       <option name="number" value="Default" />
       <updated>1425452872282</updated>
       <workItem from="1447923432345" duration="23560000" />
-      <workItem from="1448015131607" duration="18191000" />
+      <workItem from="1448015131607" duration="18250000" />
     </task>
     <task id="LOCAL-00001" summary="node_modules 디렉토리 제거(pacages.json 에서 처리하도록)">
       <created>1448331200478</created>
@@ -615,11 +614,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448331277411</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="README 수정">
+      <created>1448331355372</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1448331355372</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41751000" />
+    <option name="totallyTimeSpent" value="41810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -813,8 +818,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66472304">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34985423">
+          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
           <folding />
         </state>
       </provider>
