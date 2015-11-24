@@ -46,14 +46,15 @@ profile에는 아래의 property들이 설정되어 넘겨진다.
 
 ## simple sample
 ### 설치 & 실행
-1. `./sample/sample.js` 의 `appKey` 를 developers.kakao.com 에서 발급받은 JS appKey 값으로 셋팅.
+1. `./sample/sample.js` 의 `appKey` 를 https://developers.kakao.com 에서 발급받은 JS appKey 값으로 셋팅.
 2. command line 에서 아래의 커맨드 실행
+3. 브라우져를 열고 `127.0.0.1:3000/login` 을 입력 후 이후 과정을 진행한다.
 ```
 cd ./sample
 npm install
 node app
 ```
-3. 브라우져를 열고 `127.0.0.1:3000/login` 을 입력 후 이후 과정을 진행한다.
+
 
 ## mean.io 와 쉽게 연동하기
 
