@@ -8,10 +8,11 @@ npm install passport-kakao
 
 ## how to use
 
-1. https://developers.kakao.com/ 에서 애플리케이션을 등록한다.
-2. 내 애플리케이션 - 설정 - 일반에서, 플랫폼 추가를 누른 후 웹 플랫폼을 추가한다.
-3. 웹 플랫폼 설정의 사이트 도메인에 자신의 사이트 도메인을 추가한다. (ex : http://localhost:3000)
-4. 프로그램 상에서는 아래와 같이 사용한다.
+* https://developers.kakao.com/ 에서 애플리케이션을 등록한다.
+* 방금 추가한 애플리케이션의 설정 - 사용자 관리에 들어가서 사용을 ON으로 한 뒤 저장한다.
+* 설정 - 일반에서, 플랫폼 추가를 누른 후 웹 플랫폼을 추가한다.
+* 웹 플랫폼 설정의 사이트 도메인에 자신의 사이트 도메인을 추가한다. (ex : http://localhost:3000)
+* 프로그램 상에서는 아래와 같이 사용한다.
 
 ```javascript
 var passport = require('passport'),
@@ -173,5 +174,3 @@ app.get('/oauth', passport.authenticate('kakao', {
 
 ## 기타
 passport-oauth 모듈과 passport-facebook 모듈을 참고함.
-
-
