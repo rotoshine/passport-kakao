@@ -2,11 +2,13 @@ var passport = require("passport");
 var express =  require("express");
 var KakaoStrategy = require("../lib/passport-kakao.js").Strategy;
 
-var appKey = "YOUR_APP_KEY";
+var appKey = "YOUR_APP_REST_API_KEY";
+var appSecret = "YOUR_APP_CLIENT_SECRET_KEY";
 
 // passport 에 Kakao Oauth 추가
 passport.use( new KakaoStrategy({
         clientID: appKey,
+        clientSecret: appSecret,
         callbackURL: "http://localhost:3000/oauth"
     },
     function(accessToken, refreshToken, params, profile, done){
