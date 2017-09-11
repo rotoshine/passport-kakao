@@ -14,12 +14,15 @@ npm install passport-kakao
 * 웹 플랫폼 설정의 사이트 도메인에 자신의 사이트 도메인을 추가한다. (ex : http://localhost:3000)
 * 프로그램 상에서는 아래와 같이 사용한다.
 
+> clientSecret을 활성화 한 경우 해당 파라메터를 같이 넘겨줘야한다.
+
 ```javascript
 var passport = require('passport'),
     KakaoStrategy = require('passport-kakao').Strategy;
 
 passport.use(new KakaoStrategy({
     clientID : clientID,
+    clientSecret: clientSecret, // clientSecret을 사용하지 않는다면 넘기지 말거나 빈 스트링을 넘길 것
     callbackURL : callbackURL
   },
   function(accessToken, refreshToken, profile, done){
