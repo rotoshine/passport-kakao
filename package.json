@@ -1,6 +1,6 @@
 {
   "name": "passport-kakao",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "kakao oauth2 login module",
   "main": "./lib/passport-kakao",
   "keywords": [
