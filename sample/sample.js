@@ -1,6 +1,6 @@
-var passport = require("passport");
-var express =  require("express");
-var KakaoStrategy = require("../lib/passport-kakao.js").Strategy;
+var passport = require("passport"),
+    express =  require("express"),
+    KakaoStrategy = require("../lib/passport-kakao.js").Strategy;
 
 var appKey = "YOUR_APP_REST_API_KEY";
 var appSecret = "YOUR_APP_CLIENT_SECRET_KEY";
