@@ -1,0 +1,17 @@
+{
+  "include": ["./src"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es5", "es6"],
+    "sourceMap": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
+}

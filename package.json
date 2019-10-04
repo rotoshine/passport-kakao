@@ -1,8 +1,8 @@
 {
   "name": "passport-kakao",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "kakao oauth2 login module",
-  "main": "./lib/passport-kakao",
+  "main": "./dist/passport-kakao",
   "keywords": [
     "passport",
     "kakao",
@@ -19,8 +19,15 @@
     "pkginfo": "~0.3.0",
     "passport-oauth2": "~1.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.7.11",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
+  },
   "scripts": {
-    "test": "jasmine-node --verbose test/passport-kakao.spec.js"
+    "test": "jasmine-node --verbose test/passport-kakao.spec.js",
+    "lint": "tslint --project ."
   }
 }
