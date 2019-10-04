@@ -7,14 +7,7 @@ const DEFAULT_CLIENT_SECRET = 'kakao'
 const OAUTH_HOST = 'https://kauth.kakao.com'
 const USER_PROFILE_URL = 'https://kapi.kakao.com/v2/user/me'
 
-/**
- * KaKaoStrategy 생성자 함수.<br/>
- * @param options.clientID 필수. kakao rest app key.
- * @param options.callbackURL 필수. 로그인 처리 후 호출할 URL
- * @param verify
- * @constructor
- */
-function Strategy(options: StrategyOptions = {}, verify: any) {
+export const buildOptions = (options: StrategyOptions) => {
   options.authorizationURL = `${OAUTH_HOST}/oauth/authorize`
   options.tokenURL = `${OAUTH_HOST}/oauth/token`
 
@@ -29,7 +22,17 @@ function Strategy(options: StrategyOptions = {}, verify: any) {
     options.customHeaders['User-Agent'] = options.userAgent || 'passport-kakao'
   }
 
-  OAuth2Strategy.call(this, options, verify)
+  return options
+}
+/**
+ * KaKaoStrategy 생성자 함수.<br/>
+ * @param options.clientID 필수. kakao rest app key.
+ * @param options.callbackURL 필수. 로그인 처리 후 호출할 URL
+ * @param verify
+ * @constructor
+ */
+function Strategy(options: StrategyOptions = {}, verify: any) {
+  OAuth2Strategy.call(this, buildOptions(options), verify)
   this.name = 'kakao'
   this._userProfileURL = USER_PROFILE_URL
 }

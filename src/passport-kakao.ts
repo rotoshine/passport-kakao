@@ -1,7 +1,5 @@
-import Strategy from './strategy'
+import Strategy from './Strategy'
 
 export default Strategy
 
-export {
-  Strategy
-}
+export { Strategy }
