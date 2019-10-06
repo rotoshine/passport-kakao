@@ -5,4 +5,7 @@ before_script:
   - npm install -g jasmine-node
 
 script:
-  - 'make test-cov'
+  - 'make check'
+
+after_success:
+  - 'make report-cov'
