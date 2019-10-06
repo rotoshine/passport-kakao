@@ -7,7 +7,7 @@ const DEFAULT_CLIENT_SECRET = 'kakao'
 const OAUTH_HOST = 'https://kauth.kakao.com'
 const USER_PROFILE_URL = 'https://kapi.kakao.com/v2/user/me'
 
-export const buildOptions = (options: StrategyOptions) => {
+export const buildOptions = (options: StrategyOptions): StrategyOptions => {
   options.authorizationURL = `${OAUTH_HOST}/oauth/authorize`
   options.tokenURL = `${OAUTH_HOST}/oauth/token`
 
