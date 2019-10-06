@@ -31,7 +31,7 @@ passport.deserializeUser(function(obj, done) {
 })
 
 // express 앱 설정
-var app = express()
+const app = express()
 app.use(passport.initialize())
 app.get('/login', passport.authenticate('kakao', { state: 'myStateValue' }))
 app.get('/oauth', passport.authenticate('kakao'), function(req, res) {
