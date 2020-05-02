@@ -25,6 +25,7 @@
     "@types/node": "^12.7.11",
     "chai": "^4.2.0",
     "mocha": "^6.2.1",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
@@ -32,7 +33,8 @@
   },
   "scripts": {
     "test": "mocha -r node_modules/ts-node/register ./tests/**/*.spec.ts",
-    "build": "npx tsc",
+    "clean": "rimraf dist/*",
+    "build": "npm run clean && npx tsc",
     "lint": "tslint --project ."
   }
 }
