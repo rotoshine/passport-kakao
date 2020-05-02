@@ -55,7 +55,7 @@ inherits(Strategy, OAuth2Strategy)
  * @param {String} accessToken
  * @param {Function} done
  */
-Strategy.prototype.userProfile = function(
+Strategy.prototype.userProfile = function (
   accessToken: string,
   done: (error: Error, profile?: Profile) => void
 ) {

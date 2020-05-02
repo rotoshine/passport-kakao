@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const passport = require('passport')
 const express = require('express')
 const KakaoStrategy = require('../dist/passport-kakao.js').Strategy
 
-const appKey = 'YOUR_APP_REST_API_KEY'
-const appSecret = 'YOUR_APP_CLIENT_SECRET_KEY'
+const appKey = process.env.API_KEY
+const appSecret = process.env.CLIENT_SECRET_KEY
 
 // passport 에 Kakao Oauth 추가
 passport.use(
@@ -13,7 +15,7 @@ passport.use(
       clientSecret: appSecret,
       callbackURL: 'http://localhost:3000/oauth',
     },
-    function(accessToken, refreshToken, params, profile, done) {
+    function (accessToken, refreshToken, params, profile, done) {
       // authorization 에 성공했을때의 액션
       console.log(`accessToken : ${accessToken}`)
       console.log(`사용자 profile: ${JSON.stringify(profile._json)}`)
@@ -23,10 +25,10 @@ passport.use(
     }
   )
 )
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user)
 })
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function (obj, done) {
   done(null, obj)
 })
 
@@ -34,11 +36,12 @@ passport.deserializeUser(function(obj, done) {
 var app = express()
 app.use(passport.initialize())
 app.get('/login', passport.authenticate('kakao', { state: 'myStateValue' }))
-app.get('/oauth', passport.authenticate('kakao'), function(req, res) {
+app.get('/oauth', passport.authenticate('kakao'), function (req, res) {
   // 로그인 시작시 state 값을 받을 수 있음
   res.send('state :' + req.query.state)
 })
 app.listen(3000)
+console.log('> server start! ')
 
 // 사용자 구현 부분
 function save() {

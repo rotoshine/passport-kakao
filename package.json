@@ -1,6 +1,6 @@
 {
   "name": "passport-kakao",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "kakao oauth2 login module",
   "main": "./dist/passport-kakao",
   "keywords": [
@@ -23,8 +23,12 @@
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.11",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
     "mocha": "^6.2.1",
+    "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
@@ -35,6 +39,7 @@
     "test": "mocha -r node_modules/ts-node/register ./tests/**/*.spec.ts",
     "clean": "rimraf dist/*",
     "build": "npm run clean && npx tsc",
-    "lint": "tslint --project ."
+    "lint": "eslint -c .eslintrc.js src/**/*.ts",
+    "format": "prettier --write \"src/*.{ts,tsx,json,md}\""
   }
 }

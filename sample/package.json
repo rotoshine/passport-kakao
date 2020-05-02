@@ -5,7 +5,8 @@
     "url": "git://github.com/rotoshine/passport-kakao.git"
   },
   "dependencies": {
-    "passport": ">= 0.0.0",
-    "express": ">= 4.4.5"
+    "dotenv": "^8.2.0",
+    "express": ">= 4.4.5",
+    "passport": ">= 0.0.0"
   }
 }
