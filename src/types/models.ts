@@ -1,5 +1,8 @@
 export interface StrategyOptions {
   authorizationURL?: string
+  prompt?: string
+  state?: string
+  nonce?: string
   tokenURL?: string
   clientSecret?: string
   scopeSeparator?: string

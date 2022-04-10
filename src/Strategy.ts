@@ -1,5 +1,6 @@
 import { inherits } from 'util'
 import OAuth2Strategy from 'passport-oauth2'
+import qs from 'querystring'
 
 import { StrategyOptions, Profile } from './types/models'
 
@@ -8,7 +9,15 @@ const OAUTH_HOST = 'https://kauth.kakao.com'
 const USER_PROFILE_URL = 'https://kapi.kakao.com/v2/user/me'
 
 export const buildOptions = (options: StrategyOptions) => {
-  options.authorizationURL = `${OAUTH_HOST}/oauth/authorize`
+  const query = qs.stringify({
+    ...(options.prompt && { prompt: options.prompt }),
+    ...(options.state && { state: options.state }),
+    ...(options.nonce && { nonce: options.nonce }),
+  })
+
+  options.authorizationURL = query
+    ? `${OAUTH_HOST}/oauth/authorize`
+    : `${OAUTH_HOST}/oauth/authorize?${query}`
   options.tokenURL = `${OAUTH_HOST}/oauth/token`
 
   if (!options.clientSecret) {
