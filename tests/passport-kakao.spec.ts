@@ -11,7 +11,7 @@ describe('passport-kakao', () => {
     expect(options).to.not.equals(null)
     expect(options.clientSecret).to.be.equals('kakao')
     expect(options.scopeSeparator).to.be.equals(',')
-    expect(options.customHeaders['User-Agent']).to.be.equals('passport-kakao')
+    expect(options.customHeaders!['User-Agent']).to.be.equals('passport-kakao')
   })
   it('Strategy option의 User-Agent값이 있을 경우 customHeaders의 User-Agent가 해당 값으로 설정되어야 한다.', () => {
     const options = buildOptions({
@@ -19,6 +19,6 @@ describe('passport-kakao', () => {
         'User-Agent': 'HELLO ROTO',
       },
     })
-    expect(options.customHeaders['User-Agent']).to.be.equals('HELLO ROTO')
+    expect(options.customHeaders!['User-Agent']).to.be.equals('HELLO ROTO')
   })
 })

@@ -56,148 +56,15 @@ profile에는 아래의 property들이 설정되어 넘겨진다.
 
 ### 설치 & 실행
 
-1. `./sample/sample.js` 의 `appKey` 를 https://developers.kakao.com 에서 발급받은 JS appKey 값으로 셋팅.
+1. `./sample/server/app.ts` 의 `appKey` 를 https://developers.kakao.com 에서 발급받은 JS appKey 값으로 셋팅.
 2. command line 에서 아래의 커맨드 실행
-3. 브라우져를 열고 `127.0.0.1:3000/login` 을 입력 후 이후 과정을 진행한다.
+3. 브라우져를 열고 `localhost:3000/login` 을 입력 후 이후 과정을 진행한다.
 
 ```
-cd ./sample
+cd ./sample/server
 npm install
-node app
+npm start
 ```
-
-## mean.io 와 쉽게 연동하기
-
-수정해야하는 파일들은 아래와 같다.
-
-| file path                        | 설명                           |
-| -------------------------------- | ------------------------------ |
-| server/config/env/development.js | 개발환경 설정파일              |
-| server/config/env/production.js  | 운영환경 설정파일              |
-| server/config/models/user.js     | 사용자 모델                    |
-| server/config/passport.js        | passport script                |
-| server/routes/users.js           | 사용자 로그인 관련 routes file |
-| public/auth/views/index.html     | 로그인 화면                    |
-
-(1) **mean.io app을 생성** 한다. (ex : mean init kakaoTest)
-
-(2) 해당 모듈을 연동할 mean.io app에 설치한다.(npm install passport-kakao --save)
-
-(3) **server/config/env/development.js** 와 **production.js** 에 kakao 관련 설정을 아래와 같이 추가한다.
-
-```javascript
-'use strict'
-
-module.exports = {
-  db: 'mongodb',
-  app: {
-    name: 'passport-kakao',
-  },
-  // 그외 설정들....,
-  kakao: {
-    clientID: 'kakao app rest api key',
-    callbackURL: 'http://localhost:3000/oauth',
-  },
-}
-```
-
-(4) **server/config/models/users.js** 의 사용자 스키마 정의에 **kakao: {}** 를 추가한다.
-
-(5) **server/config/passport.js** 파일에 아래 구문을 추가한다.
-
-```javascript
-// 최상단 require되는 구문에 추가
-var KakaoStrategy = require('passport-kakao').Strategy
-
-passport.use(
-  new KakaoStrategy(
-    {
-      clientID: config.kakao.clientID,
-      callbackURL: config.kakao.callbackURL,
-    },
-    function(accessToken, refreshToken, profile, done) {
-      User.findOne(
-        {
-          'kakao.id': profile.id,
-        },
-        function(err, user) {
-          if (err) {
-            return done(err)
-          }
-          if (!user) {
-            user = new User({
-              name: profile.username,
-              username: profile.id,
-              roles: ['authenticated'],
-              provider: 'kakao',
-              kakao: profile._json,
-            })
-
-            user.save(function(err) {
-              if (err) {
-                console.log(err)
-              }
-              return done(err, user)
-            })
-          } else {
-            return done(err, user)
-          }
-        }
-      )
-    }
-  )
-)
-```
-
-(6) **server/routes/users.js** 에 아래와 같은 구문을 추가한다.
-
-```javascript
-app.get(
-  '/auth/kakao',
-  passport.authenticate('kakao', {
-    failureRedirect: '#!/login',
-  }),
-  users.signin
-)
-
-app.get(
-  '/oauth',
-  passport.authenticate('kakao', {
-    failureRedirect: '#!/login',
-  }),
-  users.authCallback
-)
-```
-
-(7) **public/auth/views/index.html** 에 kakao login을 연결한다.
-
-```html
-<!-- 아래는 예시 -->
-<div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-5">
-      <a href="/auth/facebook">
-        <img src="/public/auth/assets/img/icons/facebook.png" />
-      </a>
-      <a href="/auth/twitter">
-        <img src="/public/auth/assets/img/icons/twitter.png" />
-      </a>
-
-      <!-- kakao login -->
-      <a href="/auth/kakao">
-        <img
-          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-        />
-      </a>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div ui-view></div>
-  </div>
-</div>
-```
-
-(8) grunt로 mean.io app 실행 후, 실제 로그인 연동 테스트를 해본다.
 
 ## 기타
 

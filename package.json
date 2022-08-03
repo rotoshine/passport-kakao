@@ -1,6 +1,6 @@
 {
   "name": "passport-kakao",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "kakao oauth2 login module",
   "main": "./dist/passport-kakao",
   "keywords": [
@@ -16,13 +16,13 @@
   "author": "rotoshine@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "pkginfo": "~0.3.0",
-    "passport-oauth2": "~1.1.2"
+    "passport-oauth2": "^1.6.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.3",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.11",
+    "@types/passport-oauth2": "^1.4.11",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "chai": "^4.2.0",
